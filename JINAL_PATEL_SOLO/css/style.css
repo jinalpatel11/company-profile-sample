@@ -658,9 +658,14 @@ ul.social-list li:nth-child(3) a:hover {
 
 .service-tab .tab-bg {
     background: #fff;
-    padding: 59px 30px;
+    padding: 30px 30px;
     min-height: 481px;
 }
+
+
+
+
+
 
 .service-tab h2 {
     font-size: 48px;
@@ -674,7 +679,7 @@ ul.social-list li:nth-child(3) a:hover {
     margin-bottom: 30px;
 }
 
-.service-tab p {
+.service-tab p{
     line-height: 24px;
     margin-bottom: 30px;
 }
