@@ -311,3 +311,45 @@ $(window).on('load', function () {
     $("#arrow-down i").addClass("animated fadeInDown infinite");
 
 });
+
+
+/* =========================================
+              Contact Form
+============================================ */
+
+// Initialize EmailJS
+(function(){
+    emailjs.init("jinalpatel11121999@gmail.com"); // Replace with your EmailJS user ID
+})();
+
+// Add event listener when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("contact-form");
+
+    // Add event listener for form submission
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Get form data
+        var formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+
+        // Send email using EmailJS
+        emailjs.send("service_r4dymds", "template_iprogkd", formData)
+            .then(function(response) {
+                console.log("Email sent successfully:", response);
+                // Optionally, you can display a success message to the user
+                alert("Your message has been sent successfully!");
+                form.reset(); // Reset the form after successful submission
+            }, function(error) {
+                console.error("Email send failed:", error);
+                // Optionally, you can display an error message to the user
+                alert("An error occurred while sending your message. Please try again later.");
+            });
+    });
+});
